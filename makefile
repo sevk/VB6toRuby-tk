@@ -1,9 +1,18 @@
 
-~/ts :
+run :
+	ruby main.rb
+
+all : main.rb
+	ruby cv.rb
+
+~/ts : main.rb
 	ruby cv.rb --make
+	@sleep 3
 	@echo
 	@echo output ::
 	ls -al main.rb
+	@echo run 
+	@echo	ruby main.rb
 fl = `ls */*.rb -atL | head -n 3 ` `ls *.rb  -atL | head -n 3`
 
 install : ~/ts
